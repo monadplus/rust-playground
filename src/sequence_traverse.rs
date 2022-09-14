@@ -1,13 +1,15 @@
 use std::iter::FromIterator;
 
-pub fn sequence<A, S, T>(source: S) -> T where
+pub fn sequence<A, S, T>(source: S) -> T
+where
     S: IntoIterator<Item = A>,
-    T: FromIterator<A>
+    T: FromIterator<A>,
 {
     source.into_iter().collect()
 }
 
-pub fn traverse<A, B, F, S, T>(source: S, f: F) -> T where
+pub fn traverse<A, B, F, S, T>(source: S, f: F) -> T
+where
     S: IntoIterator<Item = A>,
     F: Fn(A) -> B,
     T: FromIterator<B>,
@@ -52,9 +54,9 @@ fn traverse_vec_test() {
     let xs: Vec<u32> = (1..10).into_iter().collect();
     let result: Result<Vec<u32>, String> = traverse(xs, |x| {
         if x < 9 {
-          Ok::<u32, String>(x)
+            Ok::<u32, String>(x)
         } else {
-          Err::<u32, String>("failed".to_string())
+            Err::<u32, String>("failed".to_string())
         }
     });
     let expected: Result<Vec<u32>, String> = Err("failed".to_string());
@@ -68,13 +70,7 @@ fn traverse_vec_test() {
     assert_eq!(result, expected);
 
     let xs: Vec<u32> = (1..10).into_iter().collect();
-    let result: Option<Vec<u32>> = traverse(xs, |x| {
-        if x < 9 {
-            Some(x)
-        } else {
-            None
-        }
-    });
+    let result: Option<Vec<u32>> = traverse(xs, |x| if x < 9 { Some(x) } else { None });
     let expected: Option<Vec<u32>> = None;
     assert_eq!(result, expected);
 }
