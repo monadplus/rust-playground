@@ -3,11 +3,27 @@ name = "playground"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-async-stream = "0.3.3"
-hex = "0.4.3"
 futures = "0.3.21"
 tokio = { version = "1.21.1", features = ["full"]}
 tokio-stream = "0.1.10"
+async-stream = "0.3.3"
+
+hex = "0.4.3"
+
+rand = "0.8.5"
+
+serde = { version = "1.0.147", features = ["derive", "serde_derive"] }
+serde_json = "1.0.87"
+
+tracing = { version = "0.1.37", features = ["log"] }
+tracing-subscriber = { version = "0.3.16", features = ["json", "serde", "serde_json", "time", "env-filter"] }
+tracing-futures = { version = "0.2.5", features = ["tokio"] }
+
+log = "0.4.17"
+env_logger = "0.9.3"
+test-log = { version = "0.2.11", default-features = false, features = ["trace"] }
+
+opentelemetry = { version = "0.18.0", default-features = false, features = ["trace"] }
+opentelemetry-jaeger = "0.17.0"
+tracing-opentelemetry = "0.18.0"
