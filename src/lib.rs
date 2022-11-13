@@ -7,3 +7,4 @@ pub mod sequence_traverse;
 pub mod tokio_stream_test;
 pub mod unsafe_rust;
 pub mod tracing;
+pub mod opentelemetry;
