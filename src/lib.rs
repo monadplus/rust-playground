@@ -9,3 +9,4 @@ pub mod unsafe_rust;
 pub mod tracing;
 pub mod opentelemetry;
 pub mod unordered_futures;
+pub mod arc_swap;
