@@ -9,6 +9,7 @@ pub mod experiment_3;
 pub mod experiment_4;
 pub mod opentelemetry;
 pub mod sequence_traverse;
+pub mod stream;
 pub mod thiserror;
 pub mod tokio_stream_test;
 pub mod tracing;
