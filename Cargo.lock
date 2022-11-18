@@ -780,6 +780,7 @@ dependencies = [
  "serde",
  "serde_json",
  "test-log",
+ "thiserror",
  "tokio 1.21.2",
  "tokio-stream",
  "tracing",
