@@ -771,6 +771,7 @@ dependencies = [
  "env_logger",
  "futures 0.3.25",
  "hex",
+ "lazy_static",
  "log",
  "once_cell",
  "opentelemetry",
