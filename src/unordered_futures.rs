@@ -4,8 +4,8 @@ async fn do_something(i: u8) -> String {
     format! {"Future {i:#b}"}
 }
 
-#[tokio::main]
-async fn main() {
+#[tokio::test]
+async fn unordered_futures_test() {
     let v = std::sync::Arc::new(tokio::sync::Mutex::new(vec![]));
     (0..100)
         .map(|i| tokio::spawn(do_something(i)))

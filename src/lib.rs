@@ -11,3 +11,4 @@ pub mod opentelemetry;
 pub mod unordered_futures;
 pub mod arc_swap;
 pub mod cow;
+pub mod dyn_trait;
