@@ -12,6 +12,7 @@ pub mod sequence_traverse;
 pub mod stream;
 pub mod thiserror;
 pub mod tokio_stream_test;
+pub mod tower;
 pub mod tracing;
 pub mod unordered_futures;
 pub mod unsafe_rust;
