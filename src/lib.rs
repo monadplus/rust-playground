@@ -2,6 +2,7 @@ pub mod arc_swap;
 pub mod box_dropping;
 pub mod box_future;
 pub mod cow;
+pub mod decimal;
 pub mod dyn_trait;
 pub mod experiment_1;
 pub mod experiment_2;
