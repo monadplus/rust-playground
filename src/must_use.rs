@@ -19,4 +19,3 @@ fn must_use_attribute_test() {
     let a = foo.get_a();
     assert_eq!(a, 0i32);
 }
-
