@@ -35,3 +35,5 @@ reqwest = "0.11.13"
 tower = "0.4.13"
 rust_decimal = { version = "1.27.0", features = ["serde-float"] }
 rust_decimal_macros = "1.27.0"
+schemars = "0.8.11"
+jsonschema = "0.16.1"
