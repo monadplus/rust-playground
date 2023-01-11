@@ -37,3 +37,10 @@ rust_decimal = { version = "1.27.0", features = ["serde-float"] }
 rust_decimal_macros = "1.27.0"
 schemars = "0.8.11"
 jsonschema = "0.16.1"
+prost = "0.11.6"
+
+[build-dependencies]
+prost-build = "0.11.6"
+
+[features]
+nightly = []

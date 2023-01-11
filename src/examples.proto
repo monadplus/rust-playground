@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package examples;
+
+// A snazzy new shirt!
+message Shirt {
+    enum Size {
+        SMALL = 0;
+        MEDIUM = 1;
+        LARGE = 2;
+    }
+
+    string color = 1;
+    Size size = 2;
+}
+
+message Foo {
+  oneof widget {
+    int32 quux = 1;
+    string bar = 2;
+  }
+}
+
+message Faa {
+  string name = 1;
+  optional Foo foo = 2;
+}

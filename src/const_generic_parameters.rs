@@ -50,6 +50,7 @@ fn const_generic_expr_test() {
 }
 
 #[test]
+#[cfg(feature = "nightly")]
 fn const_generic_associated_type() {
     struct Variable<const N: usize>;
     struct Constant<const N: usize>;
