@@ -390,6 +390,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "displaydoc"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3bf95dc3f046b9da4f2d51833c0d3547d8564ef6910f5c1ed130306a75b92886"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "dyn-clone"
 version = "1.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1460,6 +1471,7 @@ version = "0.1.0"
 dependencies = [
  "arc-swap",
  "async-stream",
+ "displaydoc",
  "env_logger",
  "futures 0.3.25",
  "hex",
@@ -1482,6 +1494,7 @@ dependencies = [
  "thiserror",
  "tokio 1.22.0",
  "tokio-stream",
+ "toml",
  "tower",
  "tracing",
  "tracing-futures",
@@ -2423,9 +2436,9 @@ dependencies = [
 
 [[package]]
 name = "toml"
-version = "0.5.9"
+version = "0.5.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d82e1a7758622a465f8cee077614c73484dac5b836c02ff6a40d5d1010324d7"
+checksum = "1333c76748e868a4d9d1017b5ab53171dfd095f70c712fdb4653a406547f598f"
 dependencies = [
  "serde",
 ]

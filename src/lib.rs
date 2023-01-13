@@ -23,6 +23,7 @@ pub mod tower;
 pub mod tracing;
 pub mod unordered_futures;
 pub mod unsafe_rust;
+pub mod template;
 
 pub mod snazzy {
     pub mod items {

@@ -38,6 +38,8 @@ rust_decimal_macros = "1.27.0"
 schemars = "0.8.11"
 jsonschema = "0.16.1"
 prost = "0.11.6"
+displaydoc = "0.2.3"
+toml = "0.5.10"
 
 [build-dependencies]
 prost-build = "0.11.6"
