@@ -24,6 +24,7 @@ pub mod tracing;
 pub mod unordered_futures;
 pub mod unsafe_rust;
 pub mod template;
+pub mod match_causes_deadlock;
 
 pub mod snazzy {
     pub mod items {
