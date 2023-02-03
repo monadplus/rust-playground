@@ -38,6 +38,8 @@ pub trait Template: Serialize {
         Self: Sized,
         P: AsRef<Path>,
     {
-        Self::write_template(p, |file, placeholder| serde_json::to_writer_pretty(file, placeholder))
+        Self::write_template(p, |file, placeholder| {
+            serde_json::to_writer_pretty(file, placeholder)
+        })
     }
 }

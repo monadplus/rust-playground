@@ -1,6 +1,7 @@
 pub mod arc_swap;
 pub mod box_dropping;
 pub mod box_future;
+pub mod compare_mixed_numeric_types;
 pub mod const_generic_parameters;
 pub mod cow;
 pub mod decimal;
@@ -12,19 +13,19 @@ pub mod experiment_3;
 pub mod experiment_4;
 pub mod iter_tests;
 pub mod json_schema;
+pub mod match_causes_deadlock;
 pub mod maybe_uninit;
 pub mod must_use;
 pub mod opentelemetry;
 pub mod sequence_traverse;
 pub mod stream;
+pub mod template;
 pub mod thiserror;
 pub mod tokio_stream_test;
 pub mod tower;
 pub mod tracing;
 pub mod unordered_futures;
 pub mod unsafe_rust;
-pub mod template;
-pub mod match_causes_deadlock;
 
 pub mod snazzy {
     pub mod items {
