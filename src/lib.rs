@@ -11,6 +11,7 @@ pub mod experiment_1;
 pub mod experiment_2;
 pub mod experiment_3;
 pub mod experiment_4;
+pub mod format_named_arguments;
 pub mod iter_tests;
 pub mod json_schema;
 pub mod match_causes_deadlock;
