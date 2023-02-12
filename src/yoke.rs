@@ -4,8 +4,8 @@ fn yoke_test() {
     use yoke::Yoke;
 
     // https://docs.rs/yoke/latest/yoke/struct.Yoke.html
-    // 
-    // Allows you to Cow<'a, str> -> Yoke<Cow<'static, str>, ...> 
+    //
+    // Allows you to Cow<'a, str> -> Yoke<Cow<'static, str>, ...>
     // to move the object around without caring about lifetimes.
     //
     //            Yoke<Y, C>
