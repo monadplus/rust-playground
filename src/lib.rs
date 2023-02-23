@@ -1,4 +1,5 @@
 pub mod arc_swap;
+pub mod serde;
 pub mod box_dropping;
 pub mod box_future;
 pub mod codewars;
