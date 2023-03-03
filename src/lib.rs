@@ -1,5 +1,4 @@
 pub mod arc_swap;
-pub mod serde;
 pub mod box_dropping;
 pub mod box_future;
 pub mod codewars;
@@ -19,8 +18,10 @@ pub mod json_schema;
 pub mod match_causes_deadlock;
 pub mod maybe_uninit;
 pub mod must_use;
+pub mod notify;
 pub mod opentelemetry;
 pub mod sequence_traverse;
+pub mod serde;
 pub mod stream;
 pub mod template;
 pub mod thiserror;
