@@ -26,6 +26,7 @@ pub mod stream;
 pub mod template;
 pub mod thiserror;
 pub mod tokio_stream_test;
+pub mod toml;
 pub mod tower;
 pub mod tracing;
 pub mod unordered_futures;
