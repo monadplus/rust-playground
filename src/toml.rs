@@ -38,49 +38,50 @@ mod tests {
                 MyEnum::NewType("Hello".into()),
             ],
         };
-        let expected = r#"[plain]
-type = "Plain"
+        let expected = indoc::indoc! {r#"
+            [plain]
+            type = "Plain"
 
-[plain_table]
-type = "Plain"
+            [plain_table]
+            type = "Plain"
 
-[tuple]
-type = "Tuple"
-value = [
-    0,
-    true,
-]
+            [tuple]
+            type = "Tuple"
+            value = [
+                0,
+                true,
+            ]
 
-[struct]
-type = "Struct"
+            [struct]
+            type = "Struct"
 
-[struct.value]
-value = 1
+            [struct.value]
+            value = 1
 
-[newtype]
-type = "NewType"
-value = "Hello"
+            [newtype]
+            type = "NewType"
+            value = "Hello"
 
-[[my_enum]]
-type = "Plain"
+            [[my_enum]]
+            type = "Plain"
 
-[[my_enum]]
-type = "Tuple"
-value = [
-    0,
-    true,
-]
+            [[my_enum]]
+            type = "Tuple"
+            value = [
+                0,
+                true,
+            ]
 
-[[my_enum]]
-type = "Struct"
+            [[my_enum]]
+            type = "Struct"
 
-[my_enum.value]
-value = 1
+            [my_enum.value]
+            value = 1
 
-[[my_enum]]
-type = "NewType"
-value = "Hello"
-"#;
+            [[my_enum]]
+            type = "NewType"
+            value = "Hello"
+        "#};
 
         let toml_str = toml::to_string_pretty(&config).unwrap();
         assert_eq!(toml_str, expected);
