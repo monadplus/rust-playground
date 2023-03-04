@@ -22,6 +22,7 @@ pub mod notify;
 pub mod opentelemetry;
 pub mod sequence_traverse;
 pub mod serde;
+pub mod signal_hook;
 pub mod stream;
 pub mod template;
 pub mod thiserror;
