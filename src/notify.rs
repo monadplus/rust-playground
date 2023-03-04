@@ -4,7 +4,7 @@ mod tests {
     use serde::{Deserialize, Serialize};
     use std::path::Path;
     use std::result::Result as StdResult;
-    use std::sync::{Arc, Mutex};
+    use std::sync::{mpsc, Arc, Mutex};
     use std::thread;
     use std::time::Duration;
 
@@ -27,33 +27,39 @@ mod tests {
         Ok(())
     }
 
+    fn watch<P, F>(path: P, on_change: F) -> Result<INotifyWatcher>
+    where
+        P: AsRef<Path>,
+        F: Fn() + Send + 'static,
+    {
+        let mut watcher = recommended_watcher(move |event: Result<Event>| {
+            let event = event.unwrap();
+            if event.kind.is_modify() {
+                on_change()
+            } else {
+                dbg!(event);
+            }
+        })?;
+        watcher.watch(path.as_ref(), RecursiveMode::Recursive)?;
+        Ok(watcher)
+    }
+
     #[test]
     fn notify_test() -> StdResult<(), Box<dyn std::error::Error>> {
         const CONFIG_PATH: &str = "./config/example.json";
         let init_config: Config = load_config(CONFIG_PATH)?;
-        let init_config_clone: Config = load_config(CONFIG_PATH)?;
+        let init_config_clone: Config = init_config.clone();
         let config = Arc::new(Mutex::new(init_config.clone()));
         let config_clone = config.clone();
 
-        let mut watcher = RecommendedWatcher::new(
-            move |event: Result<Event>| {
-                if let Ok(event) = event {
-                    if event.kind.is_modify() {
-                        match load_config(CONFIG_PATH) {
-                            Ok(new_config) => {
-                                *config_clone.lock().unwrap() = new_config;
-                                println!("New config loaded.");
-                            }
-                            Err(err) => eprintln!("Error loading the config: {err:?}"),
-                        }
-                    } else {
-                        dbg!(event);
-                    }
-                }
-            },
-            notify::Config::default(),
-        )?;
-        watcher.watch(Path::new(CONFIG_PATH), RecursiveMode::NonRecursive)?;
+        // You need to keep the watcher alive for this to work.
+        let _watcher = watch(CONFIG_PATH, move || match load_config(CONFIG_PATH) {
+            Ok(new_config) => {
+                *config_clone.lock().unwrap() = new_config;
+                println!("New config loaded.");
+            }
+            Err(err) => eprintln!("Error loading the config: {err:?}"),
+        })?;
 
         // Update the config file.
         std::thread::spawn(move || {
