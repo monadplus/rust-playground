@@ -47,3 +47,33 @@ async fn iter_fetch_urls() {
 
     try_join_all(requests).await.unwrap();
 }
+
+use futures::{
+    stream::{self, BoxStream},
+    StreamExt,
+};
+
+#[derive(Clone)]
+struct DB;
+
+#[derive(Clone)]
+struct T;
+
+fn fetch<'a, 'e: 'a, T>(db: &'e mut DB) -> BoxStream<'a, T>
+where
+    T: 'e,
+{
+    todo!()
+}
+
+async fn stream_value_ref() {
+    let stream = stream::iter(1..100).map(|_| DB).flat_map(|mut db| {
+        async_stream::stream! {
+
+          let query_stream = fetch::<T>(&mut db);
+          for await value in query_stream {
+              yield value
+          }
+        }
+    });
+}
