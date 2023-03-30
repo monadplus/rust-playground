@@ -20,6 +20,7 @@ pub mod maybe_uninit;
 pub mod must_use;
 pub mod notify;
 pub mod opentelemetry;
+pub mod pin;
 pub mod sequence_traverse;
 pub mod serde;
 pub mod signal_hook;
