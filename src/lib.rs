@@ -1,4 +1,5 @@
 pub mod arc_swap;
+pub mod lazy_static;
 pub mod better_default_derive;
 pub mod box_dropping;
 pub mod box_future;
