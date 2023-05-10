@@ -39,6 +39,7 @@ pub mod unsafe_rust;
 pub mod yaml;
 pub mod yoke;
 pub mod multiline;
+pub mod multi_parameters;
 
 pub mod snazzy {
     pub mod items {
