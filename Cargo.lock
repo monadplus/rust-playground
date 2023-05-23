@@ -1844,6 +1844,7 @@ version = "0.1.0"
 dependencies = [
  "arc-swap",
  "async-stream",
+ "async-trait",
  "better-default-derive",
  "chrono",
  "derive_more",

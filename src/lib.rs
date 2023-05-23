@@ -1,6 +1,4 @@
 pub mod arc_swap;
-pub mod lazy_static;
-pub mod enum_discriminant;
 pub mod better_default_derive;
 pub mod box_dropping;
 pub mod box_future;
@@ -11,6 +9,7 @@ pub mod cow;
 pub mod decimal;
 pub mod derive_proto;
 pub mod dyn_trait;
+pub mod enum_discriminant;
 pub mod experiment_1;
 pub mod experiment_2;
 pub mod experiment_3;
@@ -18,8 +17,12 @@ pub mod experiment_4;
 pub mod format_named_arguments;
 pub mod iter_tests;
 pub mod json_schema;
+pub mod lazy_static;
+pub mod lifetimes_1;
 pub mod match_causes_deadlock;
 pub mod maybe_uninit;
+pub mod multi_parameters;
+pub mod multiline;
 pub mod must_use;
 pub mod notify;
 pub mod opentelemetry;
@@ -38,8 +41,6 @@ pub mod unordered_futures;
 pub mod unsafe_rust;
 pub mod yaml;
 pub mod yoke;
-pub mod multiline;
-pub mod multi_parameters;
 
 pub mod snazzy {
     pub mod items {
