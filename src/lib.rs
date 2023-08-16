@@ -1,4 +1,5 @@
 pub mod arc_swap;
+pub mod atomic_acquire_release;
 pub mod better_default_derive;
 pub mod box_dropping;
 pub mod box_future;
