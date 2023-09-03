@@ -31,6 +31,7 @@ pub mod pin;
 pub mod sequence_traverse;
 pub mod serde;
 pub mod signal_hook;
+pub mod spinlock;
 pub mod stream;
 pub mod template;
 pub mod thiserror;
