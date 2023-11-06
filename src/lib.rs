@@ -1,6 +1,7 @@
 pub mod arc_swap;
 pub mod atomic_acquire_release;
 pub mod better_default_derive;
+pub mod async_trait;
 pub mod box_dropping;
 pub mod box_future;
 pub mod codewars;
