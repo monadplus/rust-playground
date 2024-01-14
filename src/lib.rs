@@ -1,8 +1,7 @@
 pub mod arc_swap;
-pub mod elegant_recursion;
+pub mod async_trait;
 pub mod atomic_acquire_release;
 pub mod better_default_derive;
-pub mod async_trait;
 pub mod box_dropping;
 pub mod box_future;
 pub mod codewars;
@@ -13,6 +12,7 @@ pub mod decimal;
 pub mod derive_proto;
 pub mod diy;
 pub mod dyn_trait;
+pub mod elegant_recursion;
 pub mod enum_discriminant;
 pub mod experiment_1;
 pub mod experiment_2;

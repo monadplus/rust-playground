@@ -83,11 +83,12 @@ impl<T> Weak<T> {
                 return None;
             }
             assert!(n <= usize::MAX / 2);
-            if let Err(e) =
-                self.data()
-                    .data_ref_count
-                    .compare_exchange_weak(n, n + 1, Ordering::Relaxed, Ordering::Relaxed)
-            {
+            if let Err(e) = self.data().data_ref_count.compare_exchange_weak(
+                n,
+                n + 1,
+                Ordering::Relaxed,
+                Ordering::Relaxed,
+            ) {
                 n = e;
                 continue;
             }

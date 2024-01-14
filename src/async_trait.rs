@@ -1,5 +1,5 @@
-use derive_more::Deref;
 use async_trait::async_trait;
+use derive_more::Deref;
 
 async fn foo() {}
 
