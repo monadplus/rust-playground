@@ -1,4 +1,5 @@
 pub mod arc_swap;
+pub mod elegant_recursion;
 pub mod atomic_acquire_release;
 pub mod better_default_derive;
 pub mod async_trait;
