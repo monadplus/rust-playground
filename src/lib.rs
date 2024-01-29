@@ -29,6 +29,7 @@ pub mod maybe_uninit;
 pub mod multi_parameters;
 pub mod multiline;
 pub mod must_use;
+pub mod nom;
 pub mod notify;
 pub mod opentelemetry;
 pub mod pin;

@@ -1870,6 +1870,7 @@ dependencies = [
  "jsonschema",
  "lazy_static",
  "log",
+ "nom",
  "notify",
  "once_cell",
  "opentelemetry",
