@@ -10,6 +10,7 @@ pub mod const_generic_parameters;
 pub mod cow;
 pub mod decimal;
 pub mod derive_proto;
+pub mod dispatch;
 pub mod diy;
 pub mod dyn_trait;
 pub mod elegant_recursion;
