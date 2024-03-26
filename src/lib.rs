@@ -22,6 +22,7 @@ pub mod experiment_3;
 pub mod experiment_4;
 pub mod format_named_arguments;
 pub mod from_str_radix;
+pub mod gat;
 pub mod iter_tests;
 pub mod json_schema;
 pub mod lazy_static;
