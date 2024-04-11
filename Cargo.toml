@@ -9,9 +9,9 @@ debug = 1
 
 [dependencies]
 futures = "0.3.21"
-tokio = { version = "1.21.1", features = ["full"]}
-tokio-stream = "0.1.10"
-async-stream = "0.3.3"
+tokio = { version = "1.37", features = ["full"]}
+tokio-stream = "0.1"
+async-stream = "0.3"
 
 hex = "0.4.3"
 
@@ -20,7 +20,7 @@ rand = "0.8.5"
 serde = { version = "1.0.147", features = ["derive", "serde_derive"] }
 serde_json = "1.0.87"
 
-tracing = { version = "0.1.37", features = ["log"] }
+tracing = { version = "0.1", features = ["log"] }
 tracing-subscriber = { version = "0.3.16", features = ["json", "serde", "serde_json", "time", "env-filter"] }
 tracing-futures = { version = "0.2.5", features = ["tokio"] }
 
