@@ -48,6 +48,7 @@ pub mod tower;
 pub mod tracing;
 pub mod unordered_futures;
 pub mod unsafe_rust;
+pub mod wait_mutex;
 pub mod yaml;
 pub mod yoke;
 
