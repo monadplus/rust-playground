@@ -6,6 +6,7 @@ pub mod box_dropping;
 pub mod box_future;
 pub mod codewars;
 pub mod compare_mixed_numeric_types;
+pub mod condvar;
 pub mod const_generic_parameters;
 pub mod cow;
 pub mod decimal;
