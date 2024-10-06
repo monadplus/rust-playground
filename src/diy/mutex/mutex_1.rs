@@ -11,6 +11,7 @@ pub struct Mutex<T> {
     value: UnsafeCell<T>,
 }
 
+// Only Send to guarantee we don send a type like `Rc` to another thread
 unsafe impl<T> Sync for Mutex<T> where T: Send {}
 
 impl<T> Mutex<T> {

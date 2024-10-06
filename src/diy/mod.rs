@@ -1,4 +1,5 @@
 pub mod arc;
 pub mod channel;
-pub mod spinlock;
 pub mod mutex;
+pub mod rwlock;
+pub mod spinlock;
