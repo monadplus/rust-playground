@@ -39,6 +39,7 @@ nom = "7.1.3"
 itertools = "0.13.0"
 bytes = { version = "1.7.1", features = ["serde"] }
 atomic-wait = "1.1.0"
+zerocopy = { version = "0.8.5", features = ["derive", "std"] }
 
 [dev-dependencies]
 pretty_assertions = "1.4.0"

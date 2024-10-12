@@ -1,3 +1,2 @@
-fn main() {
-    std::fs::File::open("test.json").unwrap();
-}
+#[tokio::main]
+async fn main() {}

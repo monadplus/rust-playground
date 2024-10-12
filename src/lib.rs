@@ -49,6 +49,7 @@ pub mod unsafe_rust;
 pub mod wait_mutex;
 pub mod yaml;
 pub mod yoke;
+pub mod zerocopy;
 
 pub mod snazzy {
     pub mod items {
