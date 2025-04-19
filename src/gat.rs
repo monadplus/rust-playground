@@ -1,5 +1,53 @@
 #[test]
-fn test_gat() {
+fn test_gat_no_lifetime() {
+    trait Functor {
+        type Item;
+        type Result<U>;
+        fn fmap<U, P: FnMut(Self::Item) -> U>(self, f: P) -> Self::Result<U>;
+    }
+
+    impl<T> Functor for Option<T> {
+        type Item = T;
+        type Result<U> = Option<U>;
+        fn fmap<U, P: FnMut(Self::Item) -> U>(self, f: P) -> Option<U> {
+            self.map(f)
+        }
+    }
+
+    impl<T, E> Functor for Result<T, E> {
+        type Item = T;
+        type Result<U> = Result<U, E>;
+        fn fmap<U, P: FnMut(Self::Item) -> U>(self, f: P) -> Result<U, E> {
+            self.map(f)
+        }
+    }
+
+    impl<T> Functor for Vec<T> {
+        type Item = T;
+        type Result<U> = Vec<U>;
+        fn fmap<U, P: FnMut(Self::Item) -> U>(self, f: P) -> Vec<U> {
+            self.into_iter().map(f).collect()
+        }
+    }
+
+    fn zero_to_42<C: Functor<Item = i32>>(c: C) -> <C as Functor>::Result<i32> {
+        c.fmap(|x| if x == 0 { 42 } else { x })
+    }
+
+    let o0: Option<i32> = Some(0);
+    let o43: Option<i32> = Some(43);
+    println!("{:?}", zero_to_42(o0));
+    println!("{:?}", zero_to_42(o43));
+    let r0: Result<i32, ()> = Ok(0);
+    let r43: Result<i32, ()> = Ok(43);
+    println!("{:?}", zero_to_42(r0));
+    println!("{:?}", zero_to_42(r43));
+    let v: Vec<i32> = vec!{0, 1, 2};
+    println!("{:?}", zero_to_42(v));
+}
+
+#[test]
+fn test_gat_lifetime() {
     /*
     trait Iterable {
         type Item;
